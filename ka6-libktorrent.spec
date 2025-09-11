@@ -1,19 +1,19 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	25.08.0
+%define		kdeappsver	25.08.1
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		libktorrent
 Summary:	ktorrent library
 Summary(pl.UTF-8):	biblioteka ktorrent
 Name:		ka6-%{kaname}
-Version:	25.08.0
+Version:	25.08.1
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	ca8d6e7a1b81d489387f2d022440d3cd
+# Source0-md5:	2763df1eefd2747bfdaaa19d9f807da4
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel >= %{qtver}
@@ -40,6 +40,7 @@ BuildRequires:	qca-qt6-devel
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 BuildRequires:	zlib-devel
+%requires_eq_to Qt6Core Qt6Core-devel
 Obsoletes:	ka5-%{kaname} < %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
